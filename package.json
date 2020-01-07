@@ -1,0 +1,82 @@
+{
+    "name": "dictionary",
+    "displayName": "dictionary",
+    "description": "汉英英汉词典, 金山词霸, 有道翻译 for vscode",
+    "version": "0.0.1",
+    "publisher": "ExiaHuang",
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "icon": "images/icon.png",
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+        "金山词霸",
+        "有道翻译",
+        "词典",
+        "英语词典",
+        "英语字典",
+        "英語",
+        "translate",
+        "dictionary",
+        "fanyi"
+    ],
+    "bugs": {
+        "url": "https://github.com/exiahuang/fanyi-vscode/issues"
+    },
+    "homepage": "https://github.com/exiahuang/fanyi-vscode",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/exiahuang/fanyi-vscode.git"
+    },
+    "activationEvents": [
+        "onCommand:dictionary.fanyi"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "dictionary.fanyi",
+                "title": "汉英英汉词典"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "dictionary.fanyi",
+                    "when": "editorHasSelection",
+                    "group": "xyGroup@1"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^5.2.7",
+        "@types/node": "^12.11.7",
+        "@types/vscode": "^1.41.0",
+        "glob": "^7.1.5",
+        "mocha": "^6.2.2",
+        "typescript": "^3.6.4",
+        "tslint": "^5.20.0",
+        "vscode-test": "^1.2.2"
+    },
+    "dependencies": {
+        "chalk": "^3.0.0",
+        "commander": "^4.0.0",
+        "html-entities": "^1.1.2",
+        "is-chinese": "^1.2.5",
+        "ora": "^4.0.2",
+        "request": "^2.81.0",
+        "update-notifier": "^3.0.1",
+        "xml2js": "^0.4.8"
+    }
+}
